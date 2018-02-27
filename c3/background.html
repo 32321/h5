@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 500px;
+            height: 250px;
+            border: 10px solid 	rgba(0,0,0,0.5);
+            /* 背景颜色是包括着边框，内边距，内容的。  */
+            /*background-color: #ff0;*/
+            /*  而背景图片是从只包括着内容和内边距的。 */
+            background: url("img/2.png") no-repeat;
+            /* background-origin默认值是padding-box */
+            background-origin: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
