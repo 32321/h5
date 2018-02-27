@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五环相扣</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .circle,.circle:after{
+            width: 200px;
+            height: 200px;
+            border:10px solid;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .blue{
+            left:0;
+            top:0;
+            border-color: blue;
+        }
+        .blue:after{
+            content:"";
+            top: -10px;
+            left: -10px;
+            border-color: blue;
+            z-index:1;
+            border-bottom: transparent;
+        }
+        .red{
+            left: 230px;
+            top:0;
+            border-color: red;
+        }
+        .red:after{
+            content:"";
+            top: -10px;
+            left: 0px;
+            border-color: red;
+            z-index: 1;
+            border-left: transparent;
+        }
+        .gold{
+            left: 460px;
+            top:0;
+            border-color: gold;
+        }
+        .gold:after{
+            content:"";
+            top: -10px;
+            left: 0;
+            border-color: gold;
+            z-index:2;
+            border-left: transparent;
+        }
+        .green{
+            top: 110px;
+            left: 115px;
+            border-color: green;
+        }
+        .green:after{
+            content:"";
+            top: -10px;
+            left: -10px;
+            border-color: green;
+        }
+        .purple{
+            top: 110px;
+            left: 345px;
+            border-color: purple;
+        }
+        .purple:after{
+            content:"";
+            top: 0;
+            left: -10px;
+            border-color: purple;
+            z-index:1;
+            border-top: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle blue"></div>
+    <div class="circle red"></div>
+    <div class="circle gold"></div>
+    <div class="circle green"></div>
+    <div class="circle purple"></div>
+</body>
+</html>

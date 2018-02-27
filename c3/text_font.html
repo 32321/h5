@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字与字体</title>
+    <style>
+        p{
+            /* 文本阴影    水平方向偏移  垂直方向偏移  [模糊程度] 文本阴影颜色*/
+            text-shadow: 10px 10px 3px red;
+        }
+        span{
+            text-shadow: 3px 5px 1px green;
+        }
+        #div1{
+            width: 200px;
+            border: 1px solid;
+        }
+        #div2{
+            width: 200px;
+            border: 1px solid;
+        }
+        #div3{
+            width: 200px;
+            border: 1px solid;
+            /*  white-space:如何控制文本的空白  */
+            white-space: nowrap;
+            overflow: hidden;
+            /* 当值为ellipsis时，隐藏内容会以三个点呈现   当值为clip时，隐藏内容不显示,不会显示三个点   */
+            text-overflow: ellipsis;
+        }
+        #div4{
+            width: 200px;
+            font-family: Serendity Script;
+            /* 引用自定地的字体  */
+        }
+        @font-face {
+            font-family: 'Serendity Script';
+            src: url('Serendipity Script/Serendity Script.eot'); /* IE9+ */
+            src: url('Serendipity Script/Serendity Script.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('Serendipity Script/Serendity Script.woff') format('woff'), /* chrome、firefox */
+            url('Serendipity Script/Serendity Script.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('Serendipity Script/Serendity Script.svg#fontname') format('svg'); /* iOS 4.1- */
+        }
+        #h31{
+            /* rgba()比rgb()多一个值，多的一个值是控制透明度的 值的大小范围 从0到1 */
+            color:rgba(255,0,0,0.5);
+            text-shadow: 8px 8px 2px rgba(0,255,0,0.3);
+            background-color: rgba(0,0,255,0.7);
+        }
+    </style>
+</head>
+<body>
+     <p>wozaixuexic3</p>
+     <span>这是一条神奇的条例</span>
+     <!-- 当文本是中文时，会自动换行   是英文时，不会换行，超出的部分会在边框外  -->
+     <div id="div1">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+     <div id="div2">hahahahahahahahahahahahahahahahahahahahahahahahahahahahahah</div>
+     <div id="div3">更富有固然i肥肉覅u个打交道的节目均为哦佛教文化方法也i额外偶还以为发我 ieyf吗</div>
+     <div id="div4">ahaa hahaha  haha h ahh aah the are you ock ha ha</div>
+     <h3 id="h31">nihaohnihaobdgjoxzheshiyitiaoshenqidetianlu</h3>
+</body>
+</html>

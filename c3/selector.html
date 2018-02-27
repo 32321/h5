@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style>
+        /*p + p{*/
+            /*color:red;*/
+        /*}*/
+        /* +  紧挨的兄弟    ~ 后面所有的兄弟. */
+        p ~ p{
+            color: blue;
+        }
+
+        input[type^=p]{
+            background-color: blue;
+        }
+        input[type$=xt]{
+            background-color: pink;
+        }
+        a[href*=val]{
+            background-color: dimgrey;
+        }
+
+        div{
+            width: 350px;
+            border: 1px solid black;
+        }
+        div::first-line{
+            background-color: pink;
+        }
+        div::first-letter{
+            background-color: red;
+        }
+        div::selection{
+            background-color: green;
+        }
+        input::placeholder{
+            color: #ff13fe;
+        }
+
+        #ul1 > li:first-of-type{
+            background-color: red;
+        }
+        #ul1 > li:last-of-type{
+            background-color: green;
+        }
+
+        ul > li:only-of-type{
+            background-color: blue;
+        }
+        ul>li:nth-of-type(even){
+            color: #dd69b0;
+        }
+        ul > li:nth-of-type(odd){
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<p>001</p>
+<p>002</p>
+<h1>zhezhe</h1>
+<p>003</p>
+<h3>hahaha</h3>
+<p>004</p>
+<p>005</p>
+<input type="text">
+<input type="password">
+<input type="text">
+<a href="sdvaldhe">hahaha</a>
+<div>hdgfjefwifcpo wiflyeugf wofxuwgfwfxhwjfg hegfhjgjkscfbir egiwfopw iofpuwio  fkewflmxc fioergbui hwmxodk jicyu ergu</div>
+<input type="password" placeholder="请输入密码">
+<ul id="ul1">
+    <li>哈001</li>
+    <li>哈002</li>
+    <li>哈003</li>
+    <li>哈004</li>
+    <li>哈005</li>
+</ul>
+<ul>
+    <li>00000000</li>
+</ul>
+</body>
+</html>

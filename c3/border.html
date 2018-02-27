@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border</title>
+    <style>
+        .div1{
+            /*  只有当宽和高相等时，border-radius为50%才会变成圆 border-radius>=50%时效果都一样
+
+             */
+            width: 200px;
+            height: 200px;
+            border-radius:50%;
+            background-color: blue;
+        }
+        .div2{
+            /* 宽和高不相等，怎样设置都不会变成圆 */
+            width: 200px;
+            height: 300px;
+            background-color: yellow;
+            border-radius: 100px;
+            /* 这是设置的盒子的阴影 box-shadow:水平偏移距离  垂直偏移距离
+            [模糊像素] [向外延伸像素] 颜色(默认为黑色)  */
+            box-shadow: 10px 20px 1px 1px blue;
+        }
+        .div3{
+            width: 200px;
+            height: 200px;background-color: dimgrey;
+            box-shadow:5px 5px 2px 5px pink;
+        }
+        .div4{
+            width: 200px;
+            height: 200px;
+            background-color: darkolivegreen;
+            border: 10px solid;
+            border-image:url("border-img.png") 27 repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2">AAAAAAAAAAAAAAAAAAAAAAAAAA</div>
+    <div class="div3">ABC</div>
+
+    <div class="div4"></div>
+</body>
+</html>
