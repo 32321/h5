@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标准盒模型与怪异盒模型</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 10px solid;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <script>
+        var oDiv=document.getElementsByClassName("div1")[0];
+        alert(oDiv.offsetWidth);
+    </script>
+<!--
+    标准盒模型：width=content
+    怪异/混杂盒模型：width=content+padding+border
+    (开启怪异盒模型需要把<!DOCTYPE html>)去掉  指的是ie6或5.5的盒模型
+-->
+</body>
+</html>

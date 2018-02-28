@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两边固定中间自适应-1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .left , .right{
+            width: 200px;
+            height: 200px;
+        }
+        .left{
+            background-color: gold;
+            float: left;
+        }
+        .right{
+            background-color: #ff13fe;
+            float: right;
+        }
+        .center{
+            background-color: red;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <!-- center和right需要调换位置 -->
+    <div class="right"></div>
+    <div class="center"></div>
+</body>
+</html>

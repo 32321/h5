@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两边固定中间自适应-3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .left , .right{
+            width: 200px;
+            height: 200px;
+        }
+        .left{
+            background-color: gold;
+        }
+        .right{
+            background-color: #ff13fe;
+        }
+        .center{
+            background-color: red;
+            height: 200px;
+            -webkit-box-flex: 1;
+            margin: 0 10px;
+        }
+        .main{
+            display: -webkit-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性盒模型</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        .left,.right,.center{
+            /*height: 300px;*/
+        }
+        .left{
+            background-color: green;
+            width: 300px;
+            /* 也可以改变元素的排列顺序  数字越小越在前面  */
+            height: 300px;
+        }
+        .center{
+            background-color: #ff13fe;
+            -webkit-box-flex: 1;
+            /* 如果不设置width为0，则div会被内容撑的跟预期的占一份的不一样 */
+            width: 0;
+            height: 500px;
+        }
+        .right{
+            background-color: gold;
+            -webkit-box-flex: 1;
+            /* 如果不设置width为0，则div会被内容撑的跟预期的占一份的不一样 */
+            width: 0;
+            height: 700px;
+        }
+        .main{
+            /* 要在需要合理布局的地方使用该属性  弹性盒子   子元素总是分配父元素的剩余宽度/高度  */
+            display: -webkit-box;
+            /* 可以改变子元素的排列顺序 */
+            /*-webkit-box-direction: reverse;*/
+            -webkit-box-align:center ;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left">A</div>
+        <div class="center">B
+            <h1>HHHHKUYYBKJ</h1>
+        </div>
+        <div class="right">C
+            <h3>fkhefwiFEGN</h3>
+        </div>
+    </div>
+</body>
+</html>

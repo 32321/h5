@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左边固定右边自适应-3</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .div1{
+            height: 300px;
+            width: 300px;
+            background-color: #dd640e;
+        }
+        .div2{
+            height: 300px;
+            -webkit-box-flex: 1;
+            margin-left: 10px;
+            background-color: darkolivegreen;
+        }
+        .main{
+            display: -webkit-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="div1"></div>
+        <div class="div2"></div>
+    </div>
+</body>
+</html>
