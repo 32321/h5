@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin-top: 100px;
+        }
+        .box{
+            background-color: #dd69b0;
+            margin-left: 50px;
+            width: 220px;
+            height: 300px;
+            color: #dd640e;
+            /* transition  多个属性的话用逗号分开，将设置的效果以过渡的方式进行实现 可用于任何元素 包括伪对象那个after before */
+           /* transition是一个复合属性 */
+            /* 也可将这个属性分解  分别为
+             transition-property  all 或者是之前设置过的属性名 多个属性的话用逗号分开
+             transition-duration  xxx.s
+             transition-timing-function  xxxx
+             transition-delay  xxx.s */
+            -webkit-transition: width .3s ease-in .3s,background-color 1.5s ease .5s;
+            -moz-transition: width .3s ease-in .3s,background-color 1.5s ease .5s;
+            -ms-transition: width .3s ease-in .3s,background-color 1.5s ease .5s;
+            -o-transition: width .3s ease-in .3s,background-color 1.5s ease .5s;
+            transition: width .3s ease-in .3s,background-color 1.5s ease .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">fregtyjg8ihkjythbt</div>
+    <script>
+        document.getElementsByClassName("box")[0].onmouseover=function () {
+            document.getElementsByClassName("box")[0].style.backgroundColor="red"
+        }
+        document.getElementsByClassName("box")[0].onmouseout=function () {
+            document.getElementsByClassName("box")[0].style.backgroundColor="black"
+        }
+    </script>
+</body>
+</html>

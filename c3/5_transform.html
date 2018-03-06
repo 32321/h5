@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+            margin-top: 10px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: dimgrey;
+        }
+        .content{/*transform:transltae(是相对于它的父元素来进行移动的 第一个参数是x轴，二是y轴，缺省默认为0) */
+            -webkit-transform: translate(20px,5px);
+            -moz-transform: translate(20px,5px);
+            -ms-transform: translate(20px,5px);
+            -o-transform:translate(20px,5px) ;
+            transform: translate(20px,5px);
+            /*
+             transform:translatex()
+             transform:translatey() 
+            */
+
+        }
+        .div2{
+            /*transform: matrix(6,3,5,6,8,1);   一个含六值的(a,b,c,d,e,f)变换矩阵的形式指定一个2D变换*/
+            /*-webkit-transform: translate(20px,20px);  !* 2D平移 *!*/
+            /*-moz-transform: translate(20px,20px);*/
+            /*-ms-transform: translate(20px,20px);*/
+            /*-o-transform: translate(20px,20px);*/
+            /*transform: translate(20px,20px);*/
+            transform-origin: 100% 100%;
+            -webkit-transform: rotate(90deg);  /* 元素进行顺时针转换  单位为deg(转换多少度)*/
+            -moz-transform: rotate(30deg);/*使用这个属性值之前要设置transform-origin来设置旋转原点  */
+            -ms-transform: rotate(30deg);/*默认值为center center 即元素中心 */
+            -o-transform: rotate(30deg);
+            transform: rotate(90deg);
+            width: 50px;
+            height: 30px;
+        }
+        .div3{
+            background-color: aqua;
+            transform: scale(0.3);/* transform:scale(x,y) 即该元素以自己的中心为原点进行伸缩 */
+            margin-top: 100px;    /* 若只有一个参数，则第二个参数和第一个参数一样 */
+        }
+        .div4{
+            margin-top: 200px;
+            background-color: green;
+            -webkit-transform: skew(15deg,30deg);   /*transform:skew(x,y) 分别在x轴和y轴的旋转角度*/
+            -moz-transform: skew(15deg,30deg);      /*默认为0*/
+            -ms-transform: skew(15deg,30deg);
+            -o-transform: skew(15deg,30deg);
+            transform: skew(15deg,30deg);
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="box">
+    <div class="content"></div>
+</div>
+<div class="div3"></div>
+<div class="div4"></div>
+</body>
+</html>
