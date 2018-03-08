@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钟表</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+        }
+        #clock{
+            width: 200px;
+            height: 200px;
+            border:1px solid;
+            border-radius:50%;
+            margin: 200px auto;
+            position: relative;
+        }
+        #dial li{
+            width: 2px;
+            height: 6px;
+            background-color: #000;
+            position: absolute;
+            left:100px;
+            top:0;
+            transform-origin: 0 100px;
+        }
+        #dial li:nth-child(5n+1){
+            height: 10px;
+        }
+        #hour{
+            width: 4px;
+            height: 40px;
+            background-color: #000;
+            position: absolute;
+            left: 98px;
+            top: 60px;
+        }
+        #minute{
+            width: 4px;
+            height: 60px;
+            background-color: #999;
+            position: absolute;
+            left: 98px;
+            top: 40px;
+        }
+        #second{
+            width: 2px;
+            height: 70px;
+            background-color: #ff0000;
+            position: absolute;
+            left: 99px;
+            top: 30px;
+        }
+        #clock div{
+            transform-origin: bottom;
+        }
+    </style>
+</head>
+<body>
+<div id="clock">
+    <ul id="dial"></ul>
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="second"></div>
+</div>
+<script>
+    var oDial=document.getElementById("dial");
+    var oHour=document.getElementById("hour");
+    var oMinute=document.getElementById("minute");
+    var oSecond=document.getElementById("second");
+    var lis="";
+    for(var i=0;i<60;i++){
+        var aa=i*6+"deg";
+        //lis+='<li style="transform: rotate('')></li>';
+    }
+    oDial.innerHTML=lis;
+    run();
+    function run() {
+        var now=new Date();
+        var seconds=now.getSeconds();
+        var minutes=now.getMinutes()+seconds/60;
+        var hours=now.getHours()+minutes/60;
+        oHour.style.transform='rotate('+hours*30+'deg)';
+        oMinute.style.transform='rotate('+minutes*6+'deg)';
+        oSecond.style.transform='rotate('+seconds*6+'deg)';
+    }
+</script>
+</body>
+</html>
