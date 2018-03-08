@@ -74,8 +74,7 @@
     var oSecond=document.getElementById("second");
     var lis="";
     for(var i=0;i<60;i++){
-        var aa=i*6+"deg";
-        //lis+='<li style="transform: rotate('')></li>';
+        lis+='<li style='+"transform: rotate("+i*6+"deg)"+'></li>';//字符串拼接的问题
     }
     oDial.innerHTML=lis;
     run();
