@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频/音频/拖放</title>
+    <style>
+        #box3{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">
+    <button onclick="fun4()">播放/暂停</button>
+    <video id="video1" src="file/movie.ogg" controls="controls"></video>
+</div>
+<div id="box2">
+    <audio src="file/song.ogg" controls="controls"></audio>
+</div>
+<div id="box3" ondragover="fun1(event)" ondrop="fun2(event)"></div>
+<img src="../img/w3c.gif" alt="w3c" id="drag" draggable="true" ondragstart="fun(event)">
+<div></div>
+<div></div>
+<script>
+    var oVideo=document.getElementById("video1");
+    function fun4() {
+
+        if(oVideo.paused){
+            oVideo.play();
+        }else {
+            oVideo.pause();
+        }
+    }
+    function fun(eve) {
+        eve.dataTransfer.setData("text",eve.target.id);
+    }
+    function fun1(eve) {
+        eve.preventDefault();
+    }
+    function fun2(eve) {
+        eve.preventDefault();
+        var data=eve.dataTransfer.getData("text");
+        eve.target.appendChild(document.getElementById(data));
+    }
+</script>
+</body>
+</html>
