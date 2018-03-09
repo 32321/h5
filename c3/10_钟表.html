@@ -74,10 +74,12 @@
     var oSecond=document.getElementById("second");
     var lis="";
     for(var i=0;i<60;i++){
-        lis+='<li style='+"transform: rotate("+i*6+"deg)"+'></li>';//字符串拼接的问题
+        lis+='<li style="transform: rotate('+i*6+'deg);"></li>';//字符串拼接的问题  转义符写不写都可以？
+                            //一般转义字符是要把特殊符号转义成字符串输出，而这里他是功能字符是不需要转义的啊
     }
     oDial.innerHTML=lis;
     run();
+    setInterval(run,1000);
     function run() {
         var now=new Date();
         var seconds=now.getSeconds();
