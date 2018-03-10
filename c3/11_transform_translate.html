@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 2px dashed;
+            margin: 100px auto;
+        }
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color: black;
+            transform: translate(200px,100px);/*位移  水平 垂直  第二个参数不提供时默认为0*/
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background:#dd640e;
+            position: relative;
+        }
+        .box3{
+            width: 150px;
+            height: 150px;
+            background-color: dimgray;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);/* 此属性的此属性的此值能够让块级元素垂直水平居中 */
+        }
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            position: relative;
+        }
+        .box5{
+            width: 100px;
+            height: 50px;
+            background-color: dimgray;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left: -50px;
+            margin-top: -25px;  /* 也可以垂直水平居中  */
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box1"></div>
+</div>
+<div class="box2">
+    <div class="box3"></div>
+</div>
+<div class="box4">
+    <div class="box5"></div>
+</div>
+</body>
+</html>

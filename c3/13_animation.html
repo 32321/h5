@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: red;
+            border: 5px solid;
+            animation:now 5s linear 1s forwards,last 5s linear 1s paused;
+        }
+        @-webkit-keyframes now {
+                    0%{
+                        width: 500px;
+                        height: 200px;
+                    }
+                    50%{
+                        width: 300px;
+                        height: 500px;
+                    }
+                    100%{
+                        width: 300px;
+                        height: 400px;
+                    }
+                }
+        @keyframes last{
+            from{
+                background-color: red;
+            }
+            to{
+                background-color: #dd69b0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

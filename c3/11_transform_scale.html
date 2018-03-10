@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 3px dotted;
+            margin: 200px auto;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background: #ff13fe;
+            transform: scale(2);/* 缩放  以元素的中心进行缩放 不过
+            也可以设置transform-origin来自行设置 第二个参数默认和第一个参数一致 */
+        }
+        .div3{
+            width: 400px;
+            height: 400px;
+            background-color: #ff13fe;
+        }
+        .div4{
+            width: 400px;
+            height: 400px;
+            background-color: #999999;
+            transform:scale(.5);
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+<div class="div3">
+    <div class="div4"></div>
+</div>
+</body>
+</html>
