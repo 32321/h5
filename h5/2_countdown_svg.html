@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        *{
+            margin: 20px;
+            padding: 20px;
+        }
+        #circle2{
+            stroke-dashoffset: 628;
+            stroke-dasharray: 628;
+        }
+        div{
+            font-size: 80px;
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            position: absolute;
+            top: 40px;
+            left: 80px;
+        }
+        svg {
+            transform: rotate(-90deg);
+            transform-origin: 100px 100px;
+        }
+    </style>
+</head>
+<body>
+    <svg width="400" height="400">
+        <circle id="circle1" cx="100" cy="100" r="100" stroke="red" stroke-width="20" fill="#fff"></circle>
+        <circle id="circle2" cx="100" cy="100" r="100" stroke="green" stroke-width="20" fill="transparent"></circle>
+    </svg>
+    <div>10</div>
+    <script>
+        var oCircle1=document.getElementById("circle2");
+        var oDiv=document.getElementsByTagName("div")[0];
+        var count=9;
+        var st=setInterval(function () {
+            oDiv.innerHTML=count;
+            oCircle1.style.strokeDashoffset-=62.8;
+            count--;
+            if(count<0){
+                clearInterval(st);
+            }
+        },1000);
+    </script>
+</body>
+</html>
