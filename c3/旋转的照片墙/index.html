@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>飞旋的照片墙</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+
+        #container{
+            width: 100%;
+            height: 100%;
+            background-image: url("images/bg.jpg");
+        }
+        #container div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border: 5px solid #cccccc;
+            box-shadow: 3px 3px 3px 2px rgba(0,0,50,.2);
+            top: -500px;
+            left: -500px;
+            transition: all 1500ms ease-in-out;
+        }
+        #container span{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var oCon=document.getElementById("container");
+        var count=0;
+        for(var i=0;i<24;i++){
+            //图片的预加载
+            //微缩图的加载
+            var oImg=new Image();
+            oImg.onload=function () {
+                    count++;
+                    if(count==48){
+                        loadSucessed()
+                    }
+            }
+            oImg.src="images/thumbs/"+(i+1)+".jpg";
+
+            //大图的加载
+            var oBImg=new Image();
+            oBImg.onload=function () {
+                count++;
+                if(count==48){
+                    loadSucessed()
+                }
+            }
+            oBImg.src="images/"+(i+1)+".jpg";
+            var oD=document.createElement("div");
+            var oSpan=document.createElement("span");
+            oD.appendChild(oSpan);
+            oCon.appendChild(oD);
+        }
+        var aImage;
+        var a,b;
+        //当所有照片都加载完毕执行的方法
+        function loadSucessed() {
+            aImage=oCon.getElementsByTagName("div");
+            a=aImage[0].offsetWidth;
+            b=aImage[0].offsetHeight;
+            var widGap=(oCon.offsetWidth-aImage[0].offsetWidth*6)/7;
+            var higGap=(oCon.offsetHeight-aImage[0].offsetHeight*4)/5;
+            for(var m=0;m<4;m++){
+                for(var n=0;n<6;n++){
+                    //设置每个div的左偏移量和上偏移量
+                    aImage[m*6+n].style.backgroundImage="url(images/thumbs/"+(m*6+n+1)+".jpg)";
+                    aImage[m*6+n].style.left=(n+1)*widGap+a*n+"px";
+                    aImage[m*6+n].style.top=(m+1)*higGap+b*m+"px";
+                    aImage[m*6+n].style.transitionDelay=(24-(m*6+n+1))*200+'ms';//字符串拼接一定呀注意
+                    aImage[m*6+n].style.transform="rotate("+(Math.random()*40-20)+"deg)";
+                    aImage[m*6+n].posi={
+                        row:m,
+                        col:n
+                    }
+                }
+            }
+        }
+        var flag=true;
+        var bigWid=600,bigHig=400;
+        oCon.onclick=function (e) {
+            if(this===e.target){
+                flag=false;
+            }
+            if(flag){
+                for(var i=0;i<24;i++){
+                    aImage[i].style.transform="rotate(0)";
+                    aImage[i].style.transitionDelay='0ms';//一定要带上单位
+                    aImage[i].style.borderWidth="1px";
+                    aImage[i].style.left=(oCon.offsetWidth-bigWid)/2+aImage[i].posi.col*a+"px";
+                    aImage[i].style.top=(oCon.offsetHeight-bigHig)/2+aImage[i].posi.row*b+"px";
+                }
+            }else {
+
+            }
+            flag!=flag;
+        }
+
+    </script>
+</body>
+</html>
