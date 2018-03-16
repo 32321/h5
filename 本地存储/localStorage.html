@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <script>
+        localStorage.nefu="donbbeilinyedaxue";
+        console.log(localStorage.nefu);
+        localStorage.setItem("hit","heerbingongyedaxue");
+        console.log(localStorage.getItem("hit"));
+        localStorage.clear();//会删除所有localStorage
+        console.log(localStorage.nefu+" "+localStorage.getItem("hit"));//undefined null
+        localStorage.setItem("hgc","haerbingongcheng");
+        localStorage.removeItem("hgc");//删除指定的localStorage
+    </script>
+</body>
+</html>

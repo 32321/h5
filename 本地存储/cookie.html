@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie</title>
+</head>
+<body>
+    <script>
+        var timer=new Date();
+        timer.setDate(timer.getDate()+10);
+        document.cookie="stydy1=chengdong;expires="+timer.toUTCString();
+        console.log(document.cookie);
+        timer.setDate(timer.getDate()-11);
+        document.cookie="stydy1=chengdong;expires="+timer.toUTCString();
+        console.log(document.cookie+"cookie");//说明此时cookie被删除
+
+        //封装cookie的增删改查方法
+        function addCookie(key,value,timers) {
+            var timer=new Date();
+            timer.setDate(timer.getDate()+timers);
+            var str=key+"="+value+";expires="+timer.toUTCString();
+            document.cookie=str;
+        }
+
+        function deleteCookie(key) {
+            var timer=new Date();
+            timer.setDate(timer.getDate()-1);
+            document.cookie=key+"=null;expires="+timer.toUTCString();
+        }
+
+        function searchCookie(key) {
+                var arr=document.cookie.split(";");
+                for(var i=0;i<arr.length;i++){
+                    if(key===arr[i].trim().split("=")[0]){
+                        return arr[i].trim().split("=")[1];
+                    }
+                }
+        }
+
+        function updateCookie(key,value) {
+            document.cookie=key+"="+value;
+        }
+
+        addCookie("zhu","baidu",3);
+        addCookie("zld","study",2);
+        addCookie("lz","work",5);
+        console.log(searchCookie("lz"));
+        updateCookie("lz","haha");
+        console.log(searchCookie("lz"));
+        deleteCookie("lz")
+        addCookie("lz","all",5);
+        console.log(searchCookie("lz")+searchCookie("zld")+searchCookie("zhu"));
+    </script>
+
+
+</body>
+</html>
