@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深克隆与浅克隆</title>
+</head>
+<body>
+    <script>
+        var obj={
+            name:"donglin",
+            age:"65",
+            en:"nefu",
+            qianshen:{
+                qianshen:"dongxue",
+                age:"11",
+                fa:"zhedq"
+            }
+        }
+        function cloneObj(obj) {
+            var newObj={};
+            for(var p in obj){
+                if(typeof p==Object){
+                    newObj[p]=cloneObj(p);
+                }else {
+                    newObj[p]=obj[p];
+                }
+            }
+            return newObj;
+        }
+        var obj1=cloneObj(obj);
+        var obj2=obj;
+        obj.name="haha";  //深克隆    在堆中又开启了空间，因此改变了也不会影响。
+        console.log(obj1);//{name: "donglin", age: "65", en: "nefu", qianshen: {…}}
+        console.log(obj2);
+    </script>
+</body>
+</html>

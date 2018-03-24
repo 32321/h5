@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史管理</title>
+    <style>
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        li{
+            list-style-type: none;
+            float: left;
+            width: 150px;
+            height: 30px;
+        }
+        div{
+            height: 300px;
+            width: 100%;
+        }
+        div:nth-child(2){
+            background-color: #ff0000;
+            margin-top: 200px;
+        }
+        div:nth-child(3){
+            background-color: #040075;
+        }
+        div:nth-child(4){
+            background-color: #0e021e;
+            margin-bottom: 500px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="clearfix">
+        <li><a href="#div1">list 1</a></li>
+        <li><a href="#div2">list 2</a></li>
+        <li><a href="#div3">list 3</a></li>
+    </ul>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script>
+        $("a").on("click",function (e) {
+            var h=$(this).attr("href");
+            $(document.documentElement).animate({
+                scrollTop:$(h).offset().top
+            },1000,"linear")
+            e.pushState=$(h).offset().top;
+            return false;
+        })
+        window.onPopState=function (e) {
+            $(document.documentElement).animate({
+                scrollTop:e.state()
+            },1000,"linear")
+        }
+    </script>
+</body>
+</html>

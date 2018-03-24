@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj={
+        name:"zzzz",
+        age:14,
+        fa:{
+            na:"op",
+            age:17
+        }
+    }
+    var strJSON=JSON.stringify(obj);
+    obj.name="s";
+    console.log(strJSON);
+    console.log(JSON.parse(strJSON));//也是深克隆
+
+    //深克隆有两种方法
+    //1 ：原生js方法实现  2.JSON
+</script>
+</body>
+</html>
